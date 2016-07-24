@@ -29,7 +29,7 @@ class TreeGrove
 end
 
 class FruitTree
-	attr_accessor :fruit
+	attr_accessor :height, :age
 	def initialize(height, age)
 		@fruit = []
 		@height = height
@@ -80,9 +80,18 @@ putsf('%.2f', (total_diameter/@oranges.length))
 	end
 end
 
+class Fruit
+	attr_accessor :diameter
+	def initialize(diameter)
+		@diameter = diameter
+	end
+end
+
 class OrangeTree < FruitTree
 attr_accessor :height, :age
-	super(height, age)
+	def initialize(height, age)
+		super(height, age)
+	end
 
 	def height
 		@height+=1.2
@@ -96,7 +105,9 @@ end
 
 class AppleTree < FruitTree
 attr_accessor :height, :age
-	super(height, age)
+	def initialize(height, age)
+		super(height, age)
+	end
 
 	def height
 		@height+=1.4
@@ -109,7 +120,9 @@ end
 
 class PearTree < FruitTree
 attr_accessor :height, :age
-	super(height, age)
+	def initialize(height, age)
+		super(height, age)
+	end
 
 	def height
 		@height+=1.5
@@ -120,12 +133,7 @@ class Pear < Fruit
 
 end
 
-class Fruit
-	attr_accessor :diameter
-	def initialize(diameter)
-		@diameter = diameter
-	end
-end
+
 
 
 treegrove = TreeGrove.new
